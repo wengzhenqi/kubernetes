@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv001
+  labels:
+    name: pv001
+spec:
+  nfs:
+    path: /data/volumes/v1
+    server: stor1.magedu.com
+  accessModes: ["ReadWriteMany","ReadWriteOnce"]
+  capacity:
+    storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv002
+  labels:
+    name: pv002
+spec:
+  nfs:
+    path: /data/volumes/v1
+    server: stor1.magedu.com
+  accessModes: ["ReadWriteMany","ReadWriteOnce"]
+  capacity:
+    storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv003
+  labels:
+    name: pv003
+spec:
+  nfs:
+    path: /data/volumes/v1
+    server: stor1.magedu.com
+  accessModes: ["ReadWriteMany","ReadWriteOnce"]
+  capacity:
+    storage: 10Gi
+##kubectl apply -f persistentVolume.yaml
+##kubectl get pv
+

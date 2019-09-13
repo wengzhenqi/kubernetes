@@ -1,0 +1,26 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-cm-3
+  namespace: default
+  labels: 
+    app: myapp
+    tier: frontend
+  annotations:
+    magedu.com/created-by: "cluster admin"
+spec:
+  containers:
+  - name: myapp
+    image: ikubernetes/myapp:v1
+    ports:
+    - name: http
+      containerPort: 80
+    volumeMounts:
+    - name: nginxconf
+      mountPath: /etc/nginx/conf.d/   #挂载点不存在则自动创建
+      readOnly: true
+  volumes:
+  - name: nginxconf
+    configMap:
+      name: nginx-www
+#使用kubectl edit cm cm名   修改之后里面的机器文件也会相应的改变
