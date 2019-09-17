@@ -1,0 +1,69 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv001
+  labels:
+    name: pv001
+spec:
+  nfs:
+    path: /root/v1
+    server: node2
+  accessModes: ["ReadWriteMany","ReadWriteOnce"]
+  capacity:
+    storage: 1Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv002
+  labels:
+    name: pv002
+spec:
+  nfs:
+    path: /root/v2
+    server: node2
+  accessModes: ["ReadWriteMany","ReadWriteOnce"]
+  capacity:
+    storage: 2Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv003
+  labels:
+    name: pv003
+spec:
+  nfs:
+    path: /root/v3
+    server: node2
+  accessModes: ["ReadWriteMany","ReadWriteOnce"]
+  capacity:
+    storage: 3Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv004
+  labels:
+    name: pv004
+spec:
+  nfs:
+    path: /root/v4
+    server: node2
+  accessModes: ["ReadWriteMany","ReadWriteOnce"]
+  capacity:
+    storage: 4Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv005
+  labels:
+    name: pv005
+spec:
+  nfs:
+    path: /root/v5
+    server: node2
+  accessModes: ["ReadWriteMany","ReadWriteOnce"]
+  capacity:
+    storage: 5Gi
